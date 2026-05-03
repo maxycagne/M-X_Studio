@@ -10,55 +10,59 @@ const Header: React.FC = () => {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 font-sans">
-      <div className="w-full bg-[#173DED] py-2.5 overflow-hidden whitespace-nowrap border-b border-white/10">
-        <div className="inline-block animate-marquee">
-          {[1, 2].map((i) => (
-            <span key={i} className="inline-flex items-center">
-              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8">
-                NEW PROJECT LAUNCHED
+      {/* 1. MOVING HEADLINE (MARQUEE) */}
+      {/* Added 'flex' to the parent wrapper */}
+      <div className="w-full bg-[#173DED] py-2.5 overflow-hidden border-b border-white/10 flex">
+        {/* FIX 1: Changed 'inline-block' to 'flex w-max' for exact mathematical width */}
+        <div className="flex w-max animate-marquee">
+          {/* FIX 2: Increased from [1, 2] to [1, 2, 3, 4] so it never runs out of text on wide screens */}
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex items-center">
+              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8 whitespace-nowrap">
+                MINIMALIST DESIGN
               </span>
               <svg
-                className="w-3 h-3 text-white fill-current opacity-80"
+                className="w-3 h-3 text-white fill-current opacity-80 shrink-0"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 1.75l3.09 6.26L22 8.9l-5 4.87 1.18 6.88L12 17.4l-6.18 3.25L7 13.77l-5-4.87 6.91-.89L12 1.75z" />
               </svg>
 
-              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8">
-                VIEW OUR CASE STUDIES
+              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8 whitespace-nowrap">
+                SCALABLE ARCHITECTURE
               </span>
               <svg
-                className="w-3 h-3 text-white fill-current opacity-80"
+                className="w-3 h-3 text-white fill-current opacity-80 shrink-0"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 1.75l3.09 6.26L22 8.9l-5 4.87 1.18 6.88L12 17.4l-6.18 3.25L7 13.77l-5-4.87 6.91-.89L12 1.75z" />
               </svg>
 
-              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8">
-                NOW ACCEPTING Q3 CLIENTS
+              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8 whitespace-nowrap">
+                SEAMLESS USER EXPERIENCES
               </span>
-
               <svg
-                className="w-3 h-3 text-white fill-current opacity-80"
+                className="w-3 h-3 text-white fill-current opacity-80 shrink-0"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 1.75l3.09 6.26L22 8.9l-5 4.87 1.18 6.88L12 17.4l-6.18 3.25L7 13.77l-5-4.87 6.91-.89L12 1.75z" />
               </svg>
 
-              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8">
-                INNOVATION AT SCALE
+              <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold px-8 whitespace-nowrap">
+                FULL-STACK EXCELLENCE
               </span>
               <svg
-                className="w-3 h-3 text-white fill-current opacity-80"
+                className="w-3 h-3 text-white fill-current opacity-80 shrink-0"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 1.75l3.09 6.26L22 8.9l-5 4.87 1.18 6.88L12 17.4l-6.18 3.25L7 13.77l-5-4.87 6.91-.89L12 1.75z" />
               </svg>
-            </span>
+            </div>
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-between px-10 md:px-20 py-4">
+
+      <div className="relative flex items-center justify-between px-10 md:px-20 py-4">
         <Link to="/" className="group flex items-center shrink-0">
           <img
             src={logoWhite}
@@ -67,7 +71,7 @@ const Header: React.FC = () => {
           />
         </Link>
 
-        <nav className="hidden lg:block border border-white/5 bg-[#000051]/20 backdrop-blur-xl rounded-full px-12 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+        <nav className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-white/5 bg-[#000051]/20 backdrop-blur-xl rounded-full px-12 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
           <ul className="flex gap-16 m-0 p-0 list-none items-center">
             <li className="relative group">
               <NavLink to="/" className={navLinkClasses}>
@@ -90,6 +94,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
+        {/* CTA Button */}
         <div className="shrink-0">
           <Link
             to="/get-started"
