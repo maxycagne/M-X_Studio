@@ -5,7 +5,6 @@ import logoWhite from "../src/assets/logo_white.png";
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Prevent background scrolling when bottom sheet is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -163,9 +162,6 @@ const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* --- MOBILE BOTTOM SHEET IMPLEMENTATION --- */}
-
-      {/* 1. Darkened Backdrop (Click to close) */}
       <div
         className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[70] transition-opacity duration-400 ${
           isMobileMenuOpen
@@ -176,13 +172,11 @@ const Header: React.FC = () => {
         aria-hidden="true"
       />
 
-      {/* 2. Sliding Bottom Sheet */}
       <div
         className={`lg:hidden fixed inset-x-0 bottom-0 z-[80] w-full bg-[#000020] border-t border-white/10 rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        {/* Pull Indicator Tab */}
         <div
           className="w-full flex justify-center pt-4 pb-2"
           onClick={closeMenu}
