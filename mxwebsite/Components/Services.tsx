@@ -15,7 +15,6 @@ const Services = () => {
         "iOS & Android mastery. Native and cross-platform apps built for performance.",
       icon: <Smartphone className="w-8 h-8 md:w-10 md:h-10" />,
       tag: "Native & Hybrid",
-      // Spans 2 cols/rows on tablet and desktop. Custom padding for larger screens.
       className:
         "sm:col-span-2 lg:col-span-2 sm:row-span-2 bg-[#173DED] text-white p-6 sm:p-8 lg:p-12",
     },
@@ -24,7 +23,6 @@ const Services = () => {
       description: "High-performance, SEO-optimized web engines.",
       icon: <Monitor className="w-5 h-5" />,
       tag: "Architecture",
-      // Spans 2 cols on tablet and desktop.
       className:
         "sm:col-span-2 lg:col-span-2 bg-[#000051] text-[#DCDEE2] relative overflow-hidden p-6 lg:p-7",
       bgImage: "bd2f2d140f3887eb9718b8226996d041.jpg",
@@ -35,7 +33,6 @@ const Services = () => {
         "Powerful cross-platform tools for specialized enterprise needs.",
       icon: <Laptop className="w-5 h-5" />,
       tag: "Legacy & Modern",
-      // 1 col on tablet and desktop
       className:
         "sm:col-span-1 lg:col-span-1 bg-[#BABABA] text-[#000029] p-6 lg:p-7",
     },
@@ -45,7 +42,6 @@ const Services = () => {
         "Human-centric interfaces built for the next generation of digital interaction.",
       icon: <Layout className="w-5 h-5" />,
       tag: "Creative",
-      // 1 col on tablet and desktop
       className:
         "sm:col-span-1 lg:col-span-1 bg-[#DCDEE2] text-[#000029] p-6 lg:p-7",
     },
@@ -64,12 +60,6 @@ const Services = () => {
           </p>
         </div>
 
-        {/* 
-          Grid Setup:
-          Mobile: 1 column, auto rows based on content.
-          Tablet (sm): 2 columns, minimum row height 180px but expands if needed.
-          Desktop (lg): 4 columns, minimum row height 180px.
-        */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-3 sm:gap-4">
           {services.map((service, index) => (
             <div

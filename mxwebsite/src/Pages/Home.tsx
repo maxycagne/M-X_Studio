@@ -3,6 +3,8 @@ import Header from "../../Components/Header";
 import Process from "../../Components/Process";
 import Services from "../../Components/Services";
 import Projects from "../../Components/Projects";
+import Footer from "../../Components/Footer";
+import DemoCallCard from "../../Components/DemoCallCard";
 
 const Home = () => {
   return (
@@ -36,6 +38,9 @@ const Home = () => {
 
         <Process />
         <Projects />
+
+        <DemoCallCard />
+        <Footer />
       </main>
     </div>
   );

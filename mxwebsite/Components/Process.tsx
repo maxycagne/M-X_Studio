@@ -55,17 +55,14 @@ const Process = () => {
           </p>
         </div>
 
-        {/* Responsive Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5 w-full">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.id}
-                // Swapped fixed `h-64` for `min-h-[16rem]` to allow safe wrapping on narrow devices
                 className="group flex flex-col min-h-[16rem] p-6 rounded-2xl bg-[#000051]/40 border border-[#173DED]/20 hover:bg-[#000051]/80 hover:border-[#173DED]/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(23,61,237,0.15)] hover:-translate-y-1"
               >
-                {/* Icon positioned at top-left */}
                 <div className="flex-1">
                   <Icon
                     size={28}
@@ -74,12 +71,10 @@ const Process = () => {
                   />
                 </div>
 
-                {/* Text positioned at bottom-left */}
                 <div className="mt-auto pt-6">
                   <h3 className="text-white font-semibold text-lg mb-1.5">
                     {step.title}
                   </h3>
-                  {/* Added whitespace-pre-line so your \n characters actually render as line breaks */}
                   <p className="text-[#BABABA] text-xs sm:text-sm font-medium leading-relaxed whitespace-pre-line">
                     {step.description}
                   </p>
@@ -89,7 +84,6 @@ const Process = () => {
           })}
         </div>
 
-        {/* Call to Action Button */}
         <div className="mt-12 md:mt-16">
           <button className="bg-white text-[#000029] font-semibold text-sm md:text-base py-3 px-8 rounded-full hover:bg-[#DCDEE2] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
             Get Started
