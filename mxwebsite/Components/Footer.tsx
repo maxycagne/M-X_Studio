@@ -1,6 +1,5 @@
 import React from "react";
 import logoWhite from "../src/assets/logo_white.png";
-// Custom SVG for TikTok
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -13,7 +12,6 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Custom SVG for X (Twitter)
 const XIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -26,7 +24,6 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Custom SVG for Facebook
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +41,6 @@ const FacebookIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Custom SVG for Instagram
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -66,15 +62,10 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 const Footer = () => {
   return (
-    // Changed to full width, removed the outer padding and rounded corners
     <footer className="w-full bg-[#0A1121] text-white border-t border-white/5">
-      {/* Inner container to keep the content aligned with the rest of your site */}
       <div className="max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-8 lg:py-16 flex flex-col gap-12 lg:gap-16">
-        {/* Top Section: Logo and Links */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
-          {/* Logo Area */}
           <div className="w-full lg:w-1/4 flex justify-start">
-            {/* Replaced with the verbatim image file requested */}
             <img
               src={logoWhite}
               alt=" Logo"
@@ -82,9 +73,7 @@ const Footer = () => {
             />
           </div>
 
-          {/* Navigation Links Grid */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
-            {/* Column 1: Home */}
             <div className="flex flex-col gap-5">
               <h3 className="font-bold text-lg">Home</h3>
               <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
@@ -123,7 +112,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 2: About */}
             <div className="flex flex-col gap-5">
               <h3 className="font-bold text-lg">About</h3>
               <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
@@ -170,7 +158,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3: Our Projects */}
             <div className="flex flex-col gap-5">
               <h3 className="font-bold text-lg">Our Projects</h3>
               <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
