@@ -42,11 +42,9 @@ const steps = [
 const Process = () => {
   return (
     <section className="relative w-full min-h-screen py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center bg-[#000029] overflow-hidden">
-      {/* Background Gradient matching the reference image */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#000051] via-[#000029] to-[#000029] opacity-80" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
-        {/* Header Section */}
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Our Onboard Process

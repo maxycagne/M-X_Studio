@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../../Components/Header";
 import Process from "../../Components/Process";
+import Services from "../../Components/Services";
+import Projects from "../../Components/Projects";
 
 const Home = () => {
   return (
@@ -30,7 +32,10 @@ const Home = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-[#173DED]/15 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
         </section>
 
+        <Services />
+
         <Process />
+        <Projects />
       </main>
     </div>
   );
