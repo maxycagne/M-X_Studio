@@ -41,7 +41,6 @@ const OurTeam: React.FC = () => {
   return (
     <section className="bg-[#000029] min-h-screen py-20 px-6 sm:px-10 lg:px-16 font-sans flex items-center justify-center">
       <div className="max-w-[1200px] mx-auto w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-stretch">
-        {/* Left Side: Text Content */}
         <div className="flex-1 flex flex-col justify-center w-full lg:max-w-md">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#DCDEE2] tracking-tight leading-[1.1]">
             Meet the people behind our product
@@ -52,7 +51,6 @@ const OurTeam: React.FC = () => {
           </p>
         </div>
 
-        {/* Right Side: Interactive Cards (Desktop & Tablet) */}
         <div className="hidden md:flex gap-4 h-[450px] lg:h-[550px] w-full lg:w-auto flex-1 justify-start lg:justify-end">
           {teamMembers.map((member, index) => {
             const isActive = activeIndex === index;
@@ -67,7 +65,6 @@ const OurTeam: React.FC = () => {
                     : "w-[100px] lg:w-[120px] hover:border-[#173DED]/40"
                 }`}
               >
-                {/* Image Section */}
                 <div
                   className={`relative w-full transition-all duration-700 ${isActive ? "h-[50%]" : "h-full"}`}
                 >
@@ -80,8 +77,6 @@ const OurTeam: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Text Content Area (Reveals on Active) */}
                 <div
                   className={`absolute bottom-0 left-0 w-full bg-[#000051] transition-all duration-700 flex flex-col justify-between ${
                     isActive
