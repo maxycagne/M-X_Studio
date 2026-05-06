@@ -7,6 +7,8 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
+import mobile from "../src/assets/mobile.png";
+
 const Services = () => {
   const services = [
     {
@@ -15,8 +17,9 @@ const Services = () => {
         "iOS & Android mastery. Native and cross-platform apps built for performance.",
       icon: <Smartphone className="w-8 h-8 md:w-10 md:h-10" />,
       tag: "Native & Hybrid",
+      bgImage: mobile,
       className:
-        "sm:col-span-2 lg:col-span-2 sm:row-span-2 bg-[#173DED] text-white p-6 sm:p-8 lg:p-12",
+        "sm:col-span-2 lg:col-span-2 sm:row-span-2 text-white p-6 sm:p-8 lg:p-12",
     },
     {
       title: "Web Development",
@@ -25,7 +28,6 @@ const Services = () => {
       tag: "Architecture",
       className:
         "sm:col-span-2 lg:col-span-2 bg-[#000051] text-[#DCDEE2] relative overflow-hidden p-6 lg:p-7",
-      bgImage: "bd2f2d140f3887eb9718b8226996d041.jpg",
     },
     {
       title: "Desktop Development",
@@ -56,7 +58,7 @@ const Services = () => {
           </h2>
           <p className="text-[#DCDEE2] text-sm md:text-base leading-relaxed opacity-90 px-2">
             Explore the full stack of what we build — from custom systems to
-            full-scale automation. Designed to solve real business problems.
+            full-scale automation.
           </p>
         </div>
 
@@ -64,28 +66,27 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative rounded-xl flex flex-col justify-between transition-all duration-500 ease-in-out hover:scale-[0.98] ${service.className}`}
+              className={`group relative rounded-xl flex flex-col justify-between transition-all duration-500 ease-in-out hover:scale-[0.98] shadow-xl ${service.className}`}
             >
               {service.bgImage && (
                 <div className="absolute inset-0 z-0 overflow-hidden rounded-xl">
                   <img
                     src={service.bgImage}
                     alt=""
-                    className="w-full h-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[#000051]/50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 " />
                 </div>
               )}
 
               <div className="relative z-10 flex justify-between items-start mb-6 sm:mb-0">
-                <span className="font-mono text-[10px] uppercase tracking-widest opacity-60">
+                <span className="font-mono text-[10px] uppercase tracking-widest ">
                   {service.tag}
                 </span>
-                <ArrowUpRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="relative z-10 mt-auto">
-                <div className="mb-3 opacity-90">{service.icon}</div>
+                <div className="mb-3">{service.icon}</div>
                 <h4
                   className={`font-bold tracking-tighter uppercase mb-2 leading-none ${
                     service.title === "Mobile Development"
@@ -95,7 +96,7 @@ const Services = () => {
                 >
                   {service.title}
                 </h4>
-                <p className="text-xs font-medium opacity-80 max-w-[280px] leading-relaxed">
+                <p className="text-xs font-medium opacity-90 max-w-[280px] leading-relaxed">
                   {service.description}
                 </p>
               </div>

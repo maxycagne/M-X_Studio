@@ -6,6 +6,8 @@ import {
   GitBranch,
 } from "lucide-react";
 
+import mobile from "../src/assets/mobile.png";
+
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -18,7 +20,7 @@ const Projects = () => {
       description:
         "A sleek smart home productivity app for chore organization and meal planning. Features a minimalist UI and a clean, rounded 'Walis Tambo' inspired brand identity.",
       techStack: ["React Native", "Tailwind CSS", "Firebase"],
-      bgImage: "bd2f2d140f3887eb9718b8226996d041.jpg",
+      bgImage: mobile,
       accent: "#173DED",
     },
     {

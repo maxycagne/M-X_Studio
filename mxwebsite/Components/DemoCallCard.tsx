@@ -3,7 +3,7 @@ import { CalendarDays, Mail, ArrowRight } from "lucide-react";
 
 const DemoCallCard = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#020210] p-4 sm:p-10 font-sans antialiased overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen bg-[#000029] p-4 sm:p-10 font-sans antialiased overflow-hidden">
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#173DED]/10 blur-[140px] rounded-full" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#5875f5]/5 blur-[100px] rounded-full" />
 

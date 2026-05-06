@@ -123,14 +123,7 @@ const Footer = () => {
                     What is M&X Studio?
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    How M&X Studio Was Born
-                  </a>
-                </li>
+
                 <li>
                   <a
                     href="#"
