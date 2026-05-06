@@ -3,7 +3,7 @@ import React from "react";
 const Mission = () => {
   return (
     <section className="relative group">
-      <div className="absolute -left-10 top-0 w-32 h-32 bg-[#173DED]/10 rounded-full blur-[50px] pointer-events-none" />
+      <div className="absolute -left-10 top-0 w-32 h-32 bg-[#000029] rounded-full blur-[50px] pointer-events-none" />
 
       <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">
         WHAT IS <span className="text-[#173DED]">M&X STUDIO?</span>
