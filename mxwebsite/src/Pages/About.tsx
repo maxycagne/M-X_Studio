@@ -3,6 +3,8 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Mission from "../../Components/Mission";
 import OurTeam from "../../Components/OurTeam";
+import Vision from "../../Components/Vision";
+import Different from "../../Components/Different";
 
 const About = () => {
   return (
@@ -19,6 +21,18 @@ const About = () => {
         <section className="relative flex min-h-[100dvh] items-center justify-center px-4 sm:px-6 py-12">
           <div className="relative z-10 w-full max-w-6xl mx-auto">
             <OurTeam />
+          </div>
+        </section>
+
+        <section className="relative flex min-h-[100dvh] items-center justify-center px-4 sm:px-6 py-12">
+          <div className="relative z-10 w-full max-w-6xl mx-auto">
+            <Vision />
+          </div>
+        </section>
+
+        <section className="relative flex min-h-[100dvh] items-center justify-center px-4 sm:px-6 py-12">
+          <div className="relative z-10 w-full max-w-6xl mx-auto">
+            <Different />
           </div>
         </section>
       </main>
