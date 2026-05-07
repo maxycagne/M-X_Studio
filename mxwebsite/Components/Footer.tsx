@@ -170,14 +170,6 @@ const Footer = () => {
                     Our Portfolio
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    M&X Studio X Partners
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
