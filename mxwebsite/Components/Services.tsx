@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 
 import mobile from "../src/assets/mobile.png";
+import website from "../src/assets/website.jpg";
+import desktop from "../src/assets/desktop.jpg";
 
 const Services = () => {
   const services = [
@@ -26,6 +28,7 @@ const Services = () => {
       description: "High-performance, SEO-optimized web engines.",
       icon: <Monitor className="w-5 h-5" />,
       tag: "Architecture",
+      bgImage: website,
       className:
         "sm:col-span-2 lg:col-span-2 bg-[#000051] text-[#DCDEE2] relative overflow-hidden p-6 lg:p-7",
     },
@@ -35,8 +38,9 @@ const Services = () => {
         "Powerful cross-platform tools for specialized enterprise needs.",
       icon: <Laptop className="w-5 h-5" />,
       tag: "Legacy & Modern",
+      bgImage: desktop,
       className:
-        "sm:col-span-1 lg:col-span-1 bg-[#BABABA] text-[#000029] p-6 lg:p-7",
+        "sm:col-span-1 lg:col-span-1 bg-[#000051] text-[#DCDEE2] p-6 lg:p-7",
     },
     {
       title: "UI/UX Design",
@@ -45,7 +49,7 @@ const Services = () => {
       icon: <Layout className="w-5 h-5" />,
       tag: "Creative",
       className:
-        "sm:col-span-1 lg:col-span-1 bg-[#DCDEE2] text-[#000029] p-6 lg:p-7",
+        "sm:col-span-1 lg:col-span-1 bg-[#000051] text-[#DCDEE2] p-6 lg:p-7",
     },
   ];
 
