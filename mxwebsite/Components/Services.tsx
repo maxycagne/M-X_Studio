@@ -10,6 +10,7 @@ import {
 import mobile from "../src/assets/mobile.png";
 import website from "../src/assets/website.jpg";
 import desktop from "../src/assets/desktop.jpg";
+import tablet from "../src/assets/tablet1.png";
 
 const Services = () => {
   const services = [
@@ -48,6 +49,7 @@ const Services = () => {
         "Human-centric interfaces built for the next generation of digital interaction.",
       icon: <Layout className="w-5 h-5" />,
       tag: "Creative",
+      bgImage: tablet,
       className:
         "sm:col-span-1 lg:col-span-1 bg-[#000051] text-[#DCDEE2] p-6 lg:p-7",
     },
