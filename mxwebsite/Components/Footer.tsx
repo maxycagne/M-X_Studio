@@ -1,5 +1,6 @@
 import React from "react";
 import logoWhite from "../src/assets/logo_white.png";
+
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -62,120 +63,125 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#0A1121] text-white border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-8 lg:py-16 flex flex-col gap-12 lg:gap-16">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
-          <div className="w-full lg:w-1/4 flex justify-start">
+    <footer className="w-full bg-[#0A1121] text-white border-t border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:px-12 lg:px-8 lg:py-16 flex flex-col gap-10 lg:gap-16">
+        {/* Responsive Grid System */}
+        <div className="grid grid-cols-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-x-2 gap-y-10 lg:gap-12">
+          {/* Logo Section - Full width on mobile, 1 fraction on desktop */}
+          <div className="flex justify-start col-span-3 lg:col-span-1">
             <img
               src={logoWhite}
-              alt=" Logo"
-              className="h-25 md:h-50 w-auto object-contain"
+              alt="Logo"
+              className="h-16 lg:h-24 w-auto object-contain"
             />
           </div>
 
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
-            <div className="flex flex-col gap-5">
-              <h3 className="font-bold text-lg">Home</h3>
-              <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    What do we do?
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Our Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Our Onboarding
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    M&X Studio Partners
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Home Links */}
+          <div className="col-span-1 flex flex-col gap-3 lg:gap-5">
+            <h3 className="font-bold text-xs sm:text-sm lg:text-lg">Home</h3>
+            <ul className="flex flex-col gap-2 lg:gap-3 text-xs lg:text-base text-gray-300">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  What do we do?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  Our Onboarding
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  M&X Studio <br className="hidden lg:block" /> Partners
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            <div className="flex flex-col gap-5">
-              <h3 className="font-bold text-lg">About</h3>
-              <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    What is M&X Studio?
-                  </a>
-                </li>
+          {/* About Links */}
+          <div className="col-span-1 flex flex-col gap-3 lg:gap-5">
+            <h3 className="font-bold text-xs sm:text-sm lg:text-lg">About</h3>
+            <ul className="flex flex-col gap-2 lg:gap-3 text-xs lg:text-base text-gray-300">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  What is M&X Studio?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  Our Team
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  Vision
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block leading-tight lg:leading-normal"
+                >
+                  What Makes Us <br className="block sm:hidden" /> Different
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Vision
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    What Makes Us Different
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex flex-col gap-5">
-              <h3 className="font-bold text-lg">Our Projects</h3>
-              <ul className="flex flex-col gap-3 text-sm md:text-base text-gray-300">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Glimpse to our Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Our Portfolio
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Projects Links */}
+          <div className="col-span-1 flex flex-col gap-3 lg:gap-5">
+            <h3 className="font-bold text-xs sm:text-sm lg:text-lg">
+              Our Projects
+            </h3>
+            <ul className="flex flex-col gap-2 lg:gap-3 text-xs lg:text-base text-gray-300">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block leading-tight lg:leading-normal"
+                >
+                  Glimpse to our Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-200 block"
+                >
+                  Our Portfolio
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-8 pt-4 md:pt-8 border-t border-white/5">
+        {/* Bottom Section */}
+        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-6 pt-6 lg:pt-8 border-t border-white/5">
           <button className="w-full sm:w-auto bg-[#0F2344] hover:bg-[#1A3868] text-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 text-sm md:text-base shadow-lg">
             Send Us Message
           </button>
