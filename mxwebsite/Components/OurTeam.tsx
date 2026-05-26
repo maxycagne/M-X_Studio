@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import mav_pic from "../src/assets/mav.png";
 interface TeamMember {
   id: number;
   name: string;
@@ -14,24 +14,21 @@ const teamMembers: TeamMember[] = [
     name: "Ordiv Maverick Cagne",
     role: "Founder & Lead Software Developer",
     bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=800&auto=format&fit=crop",
+    imageUrl: mav_pic,
   },
   {
     id: 2,
-    name: "Maryann Ebert III",
+    name: "Ordiv Maverick Cagne",
     role: "UI Designer",
     bio: "Driven by visual storytelling and strong identity systems. Focused on brand, aesthetics, and emotionally engaging digital experiences.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop",
+    imageUrl: mav_pic,
   },
   {
     id: 3,
-    name: "Gordon Jacobson",
+    name: "Ordiv Maverick Cagne",
     role: "UX Researcher",
     bio: "Focused on understanding users and translating insights into clear product decisions. Works at the intersection of UX and business strategy.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop",
+    imageUrl: mav_pic,
   },
 ];
 
