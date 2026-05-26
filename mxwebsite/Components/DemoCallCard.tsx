@@ -7,7 +7,7 @@ const DemoCallCard = () => {
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#173DED]/10 blur-[140px] rounded-full" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#5875f5]/5 blur-[100px] rounded-full" />
 
-      <div className="relative group bg-[#05051a]/80 backdrop-blur-xl border border-white/10 p-8 sm:p-14 lg:px-20 w-full max-w-6xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-[#173DED]/40">
+      <div className="relative group   p-8 sm:p-14 lg:px-20 w-full max-w-6xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-[#173DED]/40">
         <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#173DED] to-transparent opacity-50" />
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-12">

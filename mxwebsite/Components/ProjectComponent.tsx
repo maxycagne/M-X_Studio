@@ -57,9 +57,11 @@ const ProjectComponent = () => {
     <div className="min-h-screen bg-[#000029] text-white font-sans py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-gray-400 uppercase tracking-[0.4em] text-xs font-bold mb-10">
-            Glimpse to our Projects
-          </h2>
+          <div className="text-center mb-8 md:mb-12 max-w-2xl mx-auto space-y-3 relative z-10 px-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+              Glimpse to our Projects
+            </h2>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-4">
             {["ALL", "MOBILE", "WEB", "DESKTOP"].map((tab) => (
