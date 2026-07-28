@@ -47,7 +47,7 @@ const Process = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-3 md:space-y-4 px-2">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Our Onboard Process
+            Our Process
           </h2>
           <p className="text-[#DCDEE2] text-sm sm:text-base md:text-lg leading-relaxed">
             Our approach is simple: listen deeply, design smart, build fast.

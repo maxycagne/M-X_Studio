@@ -26,6 +26,28 @@ const teamMembers: TeamMember[] = [
       linkedin: "#",
     },
   },
+  {
+    id: 1,
+    name: "Ordiv Maverick Cagne",
+    role: "Founder & Lead Software Developer",
+    bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
+    imageUrl: mav_pic,
+    socialLinks: {
+      twitter: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    id: 1,
+    name: "Ordiv Maverick Cagne",
+    role: "Founder & Lead Software Developer",
+    bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
+    imageUrl: mav_pic,
+    socialLinks: {
+      twitter: "#",
+      linkedin: "#",
+    },
+  },
 ];
 
 const OurTeam: React.FC = () => {
