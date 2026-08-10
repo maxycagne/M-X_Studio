@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7fa;
+  --foreground: #0b1b3a;
+  --muted-foreground: #5a6478;
+  --card: #ffffff;
+  --border: #e2e6ee;
+  --primary: #173ded;
+  --primary-deep: #000051;
+  --secondary: #eef1f8;
+  --violet: #5b4bdb;
+  --mint: #2bb8a8;
+  --signal: #e8a317;
+  --gradient-marquee: linear-gradient(
+    90deg,
+    var(--violet),
+    color-mix(in oklab, var(--violet) 82%, var(--primary))
+  );
+  --gradient-cta: linear-gradient(
+    135deg,
+    var(--primary),
+    color-mix(in oklab, var(--primary) 70%, var(--primary-deep))
+  );
+  --shadow-cta: 0 12px 28px color-mix(in oklab, var(--primary) 28%, transparent);
+  --shadow-soft: 0 16px 40px color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-violet: var(--violet);
+  --color-mint: var(--mint);
+  --color-signal: var(--signal);
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --shadow-cta: var(--shadow-cta);
+  --shadow-soft: var(--shadow-soft);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 120;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 5.5s ease-in-out infinite;
+  }
+
+  .animate-rise-in {
+    animation: rise-in 0.7s ease-out both;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2.8s ease-in-out infinite;
+  }
+
+  .animate-draw-line {
+    stroke-dasharray: 120;
+    animation: draw-line 2.8s ease-out both;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 18s linear infinite;
+  }
+
+  .cta-gradient {
+    background-image: var(--gradient-cta);
+    color: var(--background);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-cta {
+    box-shadow: var(--shadow-cta);
+  }
+
+  .grid-canvas {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--foreground) 6%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--foreground) 6%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 28px 28px;
+  }
+
+  .dot-canvas {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--foreground) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+  }
+
+  .marquee-band {
+    background-image: var(--gradient-marquee);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float,
+  .animate-rise-in,
+  .animate-pulse-soft,
+  .animate-draw-line,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}

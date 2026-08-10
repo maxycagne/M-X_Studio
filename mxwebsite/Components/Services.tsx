@@ -1,114 +1,125 @@
-import React from "react";
 import {
   Monitor,
   Smartphone,
-  Layout,
-  Laptop,
-  ArrowUpRight,
+  Server,
+  Cloud,
+  Bot,
+  PenTool,
 } from "lucide-react";
+import SectionHeading from "./ui/SectionHeading";
+import CtaButton from "./ui/CtaButton";
 
-import mobile from "../src/assets/mobile.png";
-import website from "../src/assets/website.jpg";
-import desktop from "../src/assets/desktop.jpg";
-import tablet from "../src/assets/tablet1.png";
+const accents = [
+  "text-primary",
+  "text-violet",
+  "text-mint",
+  "text-signal",
+] as const;
 
-const Services = () => {
-  const services = [
-    {
-      title: "Mobile Development",
-      description:
-        "iOS & Android mastery. Native and cross-platform apps built for performance.",
-      icon: <Smartphone className="w-8 h-8 md:w-10 md:h-10" />,
-      tag: "Native & Hybrid",
-      bgImage: mobile,
-      className:
-        "sm:col-span-2 lg:col-span-2 sm:row-span-2 text-white p-6 sm:p-8 lg:p-12",
-    },
-    {
-      title: "Web Development",
-      description: "High-performance, SEO-optimized web engines.",
-      icon: <Monitor className="w-5 h-5" />,
-      tag: "Architecture",
-      bgImage: website,
-      className:
-        "sm:col-span-2 lg:col-span-2 bg-[#000051] text-[#DCDEE2] relative overflow-hidden p-6 lg:p-7",
-    },
-    {
-      title: "Desktop Development",
-      description:
-        "Powerful cross-platform tools for specialized enterprise needs.",
-      icon: <Laptop className="w-5 h-5" />,
-      tag: "Legacy & Modern",
-      bgImage: desktop,
-      className:
-        "sm:col-span-1 lg:col-span-1 bg-[#000051] text-[#DCDEE2] p-6 lg:p-7",
-    },
-    {
-      title: "UI/UX Design",
-      description:
-        "Human-centric interfaces built for the next generation of digital interaction.",
-      icon: <Layout className="w-5 h-5" />,
-      tag: "Creative",
-      bgImage: tablet,
-      className:
-        "sm:col-span-1 lg:col-span-1 bg-[#000051] text-[#DCDEE2] p-6 lg:p-7",
-    },
-  ];
+const hairlines = [
+  "bg-primary",
+  "bg-violet",
+  "bg-mint",
+  "bg-signal",
+] as const;
 
+const services = [
+  {
+    title: "Web Applications",
+    description:
+      "High-performance product surfaces engineered for clarity, speed, and long-term maintainability.",
+    meta: "SPA · SSR · Design systems",
+    icon: Monitor,
+  },
+  {
+    title: "Mobile Applications",
+    description:
+      "Native and cross-platform mobile systems with reliable offline flows and polished interaction models.",
+    meta: "iOS · Android · React Native",
+    icon: Smartphone,
+  },
+  {
+    title: "Backend Systems",
+    description:
+      "APIs, services, and data layers built for secure throughput and predictable operational behavior.",
+    meta: "REST · Auth · Data models",
+    icon: Server,
+  },
+  {
+    title: "Cloud & Infrastructure",
+    description:
+      "Deployment topology, observability, and infrastructure patterns that keep releases calm and reversible.",
+    meta: "CI/CD · Cloud · Monitoring",
+    icon: Cloud,
+  },
+  {
+    title: "AI & Automation",
+    description:
+      "Practical automation and AI-assisted workflows that reduce toil without sacrificing control.",
+    meta: "Workflows · Agents · Integrations",
+    icon: Bot,
+  },
+  {
+    title: "UI/UX Engineering",
+    description:
+      "Interface systems where visual precision and interaction quality are treated as engineering concerns.",
+    meta: "Prototypes · Systems · A11y",
+    icon: PenTool,
+  },
+];
+
+interface ServicesProps {
+  showCta?: boolean;
+}
+
+const Services = ({ showCta = true }: ServicesProps) => {
   return (
-    <section className="bg-[#000029] py-12 md:py-16 px-4 sm:px-8 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-12 max-w-3xl mx-auto space-y-3">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight uppercase">
-            Our Services
-          </h2>
-          <p className="text-[#DCDEE2] text-sm md:text-base leading-relaxed opacity-90 px-2">
-            Explore the full stack of what we build — from custom systems to
-            full-scale automation.
-          </p>
-        </div>
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading
+          eyebrow="Capabilities"
+          title={
+            <>
+              Engineering capabilities built as a{" "}
+              <span className="text-primary">system</span>
+            </>
+          }
+          lead="Each service is a composable capability — not a disconnected offering."
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-3 sm:gap-4">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`group relative rounded-xl flex flex-col justify-between transition-all duration-500 ease-in-out hover:scale-[0.98] shadow-xl ${service.className}`}
-            >
-              {service.bgImage && (
-                <div className="absolute inset-0 z-0 overflow-hidden rounded-xl">
-                  <img
-                    src={service.bgImage}
-                    alt=""
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 " />
-                </div>
-              )}
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const accent = accents[index % accents.length];
+            const hairline = hairlines[index % hairlines.length];
 
-              <div className="relative z-10 flex justify-between items-start mb-6 sm:mb-0">
-                <span className="font-mono text-[10px] uppercase tracking-widest ">
-                  {service.tag}
-                </span>
-              </div>
-
-              <div className="relative z-10 mt-auto">
-                <div className="mb-3">{service.icon}</div>
-                <h4
-                  className={`font-bold tracking-tighter uppercase mb-2 leading-none ${
-                    service.title === "Mobile Development"
-                      ? "text-3xl sm:text-4xl lg:text-5xl"
-                      : "text-lg sm:text-xl"
-                  }`}
-                >
+            return (
+              <article
+                key={service.title}
+                className="animate-rise-in rounded-3xl border border-border bg-card p-6 transition-transform transition-colors hover:-translate-y-1 hover:shadow-soft"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <div className={`mb-5 h-px w-12 ${hairline}`} />
+                <Icon className={`mb-4 h-5 w-5 ${accent}`} aria-hidden="true" />
+                <h3 className="font-display text-xl font-extrabold tracking-tight">
                   {service.title}
-                </h4>
-                <p className="text-xs font-medium opacity-90 max-w-[280px] leading-relaxed">
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
-              </div>
-            </div>
-          ))}
+                <p className="mt-5 font-mono text-xs text-muted-foreground">
+                  {service.meta}
+                </p>
+              </article>
+            );
+          })}
         </div>
+
+        {showCta ? (
+          <div className="mt-12">
+            <CtaButton to="/services">Explore services</CtaButton>
+          </div>
+        ) : null}
       </div>
     </section>
   );

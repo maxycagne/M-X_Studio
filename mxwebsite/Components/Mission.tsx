@@ -1,18 +1,22 @@
-import React from "react";
-
 const Mission = () => {
   return (
-    <section className="relative group">
-      <div className="absolute -left-10 top-0 w-32 h-32 bg-[#000029] rounded-full blur-[50px] pointer-events-none" />
-
-      <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">
-        WHAT IS <span className="text-[#173DED]">M&X STUDIO?</span>
-      </h2>
-      <p className="text-[#DCDEE2] text-lg md:text-xl max-w-3xl leading-relaxed font-light tracking-wide">
-        We are a digital-first creative studio focused on building the future
-        through clean code and premium design. We bridge the gap between complex
-        technical problems and elegant user experiences.
-      </p>
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-4xl">
+          <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+            Studio
+          </p>
+          <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] md:text-5xl">
+            What is <span className="text-primary">M&X Studio</span>?
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground md:text-2xl">
+            We are a digital-first engineering studio focused on building the
+            future through clean code and precise design. We connect complex
+            technical problems with elegant user experiences that hold up in
+            production.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,93 +1,94 @@
-import React from "react";
-import { Plus, Lightbulb, Waypoints, Rocket, Network } from "lucide-react";
+import { Search, Map, Hammer, ShieldCheck, Rocket } from "lucide-react";
+import SectionHeading from "./ui/SectionHeading";
+import CtaButton from "./ui/CtaButton";
+
+const accents = [
+  "text-primary",
+  "text-violet",
+  "text-mint",
+  "text-signal",
+  "text-primary",
+] as const;
 
 const steps = [
   {
-    id: 1,
-    title: "1. Discover",
+    title: "Discover",
     description:
-      "Understand the problem.\nGather insights, requirements, and business goals.",
-    icon: Plus,
+      "Understand the problem, constraints, and business goals before writing a line of production code.",
+    icon: Search,
   },
   {
-    id: 2,
-    title: "2. Strategize",
+    title: "Strategize",
     description:
-      "Plan the solution.\nDesign architecture, features, and execution roadmap.",
-    icon: Lightbulb,
+      "Define architecture, delivery milestones, and the technical decisions that keep the path clear.",
+    icon: Map,
   },
   {
-    id: 3,
-    title: "3. Build",
+    title: "Build",
     description:
-      "Bring ideas to life.\nDevelop a scalable and functional system.",
-    icon: Waypoints,
+      "Implement in focused increments with strong interfaces, tests where they matter, and clean ownership.",
+    icon: Hammer,
   },
   {
-    id: 4,
-    title: "4. Validate",
+    title: "Validate",
     description:
-      "Ensure reliability.\nTest, refine, and optimize for performance.",
+      "Pressure-test reliability, accessibility, and performance before the release window opens.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Launch",
+    description:
+      "Ship with observability, rollback plans, and a calm handoff into ongoing iteration.",
     icon: Rocket,
-  },
-  {
-    id: 5,
-    title: "5. Launch",
-    description:
-      "Go live with confidence.\nDeploy and deliver real-world impact.",
-    icon: Network,
   },
 ];
 
 const Process = () => {
   return (
-    <section className="relative w-full min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center bg-[#000029] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#000051] via-[#000029] to-[#000029] opacity-80" />
+    <section className="border-y border-border bg-card py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionHeading
+          eyebrow="Process"
+          title={
+            <>
+              A delivery rhythm built for{" "}
+              <span className="text-primary">clarity</span>
+            </>
+          }
+          lead="Listen deeply, design smart, build with discipline, and ship with confidence."
+        />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
-        <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-3 md:space-y-4 px-2">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Our Process
-          </h2>
-          <p className="text-[#DCDEE2] text-sm sm:text-base md:text-lg leading-relaxed">
-            Our approach is simple: listen deeply, design smart, build fast.
-            Here's how we bring your vision to life with clarity and care.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5 w-full">
-          {steps.map((step) => {
+        <ol className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div
-                key={step.id}
-                className="group flex flex-col min-h-[16rem] p-6 rounded-2xl bg-[#000051]/40 border border-[#173DED]/20 hover:bg-[#000051]/80 hover:border-[#173DED]/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(23,61,237,0.15)] hover:-translate-y-1"
+              <li
+                key={step.title}
+                className="animate-rise-in rounded-3xl border border-border bg-background p-6 transition-transform hover:-translate-y-1 hover:shadow-soft"
+                style={{ animationDelay: `${index * 70}ms` }}
               >
-                <div className="flex-1">
+                <div className="mb-8 flex items-center justify-between">
                   <Icon
-                    size={28}
-                    strokeWidth={1.5}
-                    className="text-white group-hover:text-[#DCDEE2] transition-colors"
+                    className={`h-5 w-5 ${accents[index]}`}
+                    aria-hidden="true"
                   />
+                  <span className="font-mono text-xs text-muted-foreground">
+                    0{index + 1}
+                  </span>
                 </div>
-
-                <div className="mt-auto pt-6">
-                  <h3 className="text-white font-semibold text-lg mb-1.5">
-                    {step.title}
-                  </h3>
-                  <p className="text-[#BABABA] text-xs sm:text-sm font-medium leading-relaxed whitespace-pre-line">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
+                <h3 className="font-display text-lg font-extrabold">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {step.description}
+                </p>
+              </li>
             );
           })}
-        </div>
+        </ol>
 
-        <div className="mt-12 md:mt-16">
-          <button className="bg-white text-[#000029] font-semibold text-sm md:text-base py-3 px-8 rounded-full hover:bg-[#DCDEE2] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-            Get Started
-          </button>
+        <div className="mt-12">
+          <CtaButton to="/contact">Get started</CtaButton>
         </div>
       </div>
     </section>

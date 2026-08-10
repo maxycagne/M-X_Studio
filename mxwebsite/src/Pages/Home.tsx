@@ -1,48 +1,55 @@
-import React from "react";
-import Header from "../../Components/Header";
-import Process from "../../Components/Process";
+import PageMeta from "../../Components/ui/PageMeta";
+import CtaButton from "../../Components/ui/CtaButton";
+import HomeIllustration from "../../Components/illustrations/HomeIllustration";
 import Services from "../../Components/Services";
+import Process from "../../Components/Process";
 import Projects from "../../Components/Projects";
-import Footer from "../../Components/Footer";
+import Metrics from "../../Components/Metrics";
+import TechStack from "../../Components/TechStack";
 import DemoCallCard from "../../Components/DemoCallCard";
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen w-full bg-[#000029] font-sans overflow-x-hidden">
-      <Header />
+    <>
+      <PageMeta
+        title="M&X Studio — Software Development Agency"
+        description="M&X Studio builds precise, scalable software for product teams and operators who need reliable engineering."
+      />
 
-      <main>
-        <section className="relative flex min-h-[100dvh] items-center justify-center px-4 sm:px-6 pt-[140px] lg:pt-[170px] pb-12">
-          <div className="relative z-10 text-center max-w-5xl w-full">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 sm:mb-8 leading-[0.9] sm:leading-[0.85]">
-              BUILD THE <br />
-              <span className="text-[#173DED]">FUTURE</span> WITH US.
-            </h1>
-
-            <p className="text-[#DCDEE2] text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed font-light tracking-wide px-2 sm:px-0">
-              From ideas to reality, we build digital solutions designed to
-              solve real-world problems.
+      <section className="pb-32 pt-20 md:pt-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="max-w-4xl animate-rise-in">
+            <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+              Software development agency
             </p>
-
-            <div className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0">
-              <button className="group relative bg-white text-[#000029] w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 rounded-full text-[10px] sm:text-xs uppercase tracking-[0.3em] font-black hover:bg-[#DCDEE2] transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] active:scale-95">
-                Let's Build Together
-              </button>
+            <h1 className="font-display text-5xl font-extrabold leading-[0.98] tracking-[-0.03em] md:text-7xl">
+              We build software that makes teams move{" "}
+              <span className="text-primary">faster</span>.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-2xl">
+              Product interfaces, backend systems, and infrastructure —
+              engineered with precision for teams that need software they can
+              trust in production.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <CtaButton to="/contact">Start a project</CtaButton>
+              <CtaButton to="/projects" variant="secondary" showArrow={false}>
+                View selected work
+              </CtaButton>
             </div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-[#173DED]/15 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
-        </section>
+          <HomeIllustration />
+        </div>
+      </section>
 
-        <Services />
-
-        <Process />
-        <Projects />
-
-        <DemoCallCard />
-        <Footer />
-      </main>
-    </div>
+      <Services />
+      <Projects />
+      <Metrics />
+      <Process />
+      <TechStack />
+      <DemoCallCard />
+    </>
   );
 };
 

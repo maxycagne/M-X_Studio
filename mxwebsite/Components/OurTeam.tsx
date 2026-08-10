@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-// Make sure this path is correct in your actual project
+import { useState } from "react";
 import mav_pic from "../src/assets/mav.png";
+import SectionHeading from "./ui/SectionHeading";
 
 interface TeamMember {
   id: number;
@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Ordiv Maverick Cagne",
     role: "Founder & Lead Software Developer",
-    bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
+    bio: "Focused on usable systems, accessibility, and engineering clarity across product and platform work.",
     imageUrl: mav_pic,
     socialLinks: {
       twitter: "#",
@@ -27,10 +27,10 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
-    id: 1,
+    id: 2,
     name: "Ordiv Maverick Cagne",
     role: "Founder & Lead Software Developer",
-    bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
+    bio: "Builds precise interfaces and durable architectures for teams that need production-ready software.",
     imageUrl: mav_pic,
     socialLinks: {
       twitter: "#",
@@ -38,10 +38,10 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
-    id: 1,
+    id: 3,
     name: "Ordiv Maverick Cagne",
     role: "Founder & Lead Software Developer",
-    bio: "Passionate about creating intuitive digital experiences. Focused on usability, accessibility, and design systems.",
+    bio: "Connects design systems and delivery practice so product quality stays consistent after launch.",
     imageUrl: mav_pic,
     socialLinks: {
       twitter: "#",
@@ -50,144 +50,86 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-const OurTeam: React.FC = () => {
+const OurTeam = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-[#000029] min-h-screen py-20 px-6 sm:px-10 lg:px-16 font-sans flex items-center justify-center">
-      <div className="max-w-[1200px] mx-auto w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-stretch">
-        {/* Header Text */}
-        <div className="flex-1 flex flex-col justify-center w-full lg:max-w-md">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#DCDEE2] tracking-tight leading-[1.1]">
-            Meet the people behind our product
-          </h2>
-          <p className="mt-6 text-[#BABABA] text-base md:text-lg leading-relaxed">
-            Our team drives innovation and makes ideas real, turning concepts
-            into meaningful solutions.
-          </p>
-        </div>
+    <section className="border-y border-border bg-card py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeading
+            eyebrow="Team"
+            title={
+              <>
+                People behind the <span className="text-primary">product</span>
+              </>
+            }
+            lead="A compact engineering team focused on turning concepts into dependable systems."
+          />
 
-        {/* Right Side: Expanding Cards (Desktop) */}
-        <div className="hidden md:flex gap-4 h-[450px] lg:h-[550px] w-full lg:w-auto flex-1 justify-start lg:justify-end">
-          {teamMembers.map((member, index) => {
-            const isActive = activeIndex === index;
-
-            return (
-              <article
-                key={member.id}
-                onMouseEnter={() => setActiveIndex(index)}
-                onFocus={() => setActiveIndex(index)}
-                tabIndex={0}
-                className={`relative overflow-hidden rounded-[32px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow-xl border border-white/5 flex flex-col group bg-[#000051] focus:outline-none focus:ring-2 focus:ring-[#173DED] ${
-                  isActive
-                    ? "w-[300px] lg:w-[340px]"
-                    : "w-[100px] lg:w-[120px] hover:border-[#173DED]/40"
-                }`}
-              >
-                <div
-                  className={`relative w-full transition-all duration-700 ${isActive ? "h-[50%]" : "h-full"}`}
-                >
-                  <div
-                    className={`absolute inset-0 bg-black/20 z-10 transition-opacity duration-300 ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}`}
-                  ></div>
-                  <img
-                    src={member.imageUrl}
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div
-                  className={`absolute bottom-0 left-0 w-full bg-[#000051] transition-all duration-700 flex flex-col justify-between ${
-                    isActive
-                      ? "h-[50%] opacity-100"
-                      : "h-0 opacity-0 pointer-events-none"
+          <div className="hidden gap-3 md:flex md:h-[480px]">
+            {teamMembers.map((member, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <article
+                  key={member.id}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onFocus={() => setActiveIndex(index)}
+                  tabIndex={0}
+                  className={`relative overflow-hidden rounded-3xl border border-border bg-background transition-all duration-500 focus-visible:outline-none ${
+                    isActive ? "flex-[2.2]" : "flex-1"
                   }`}
                 >
-                  <div className="p-6 md:p-8 h-full flex flex-col">
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <h3 className="text-xl font-bold text-[#DCDEE2] leading-tight">
-                          {member.name}
-                        </h3>
-                        <p className="text-sm font-semibold text-[#173DED] mt-1 tracking-wide uppercase">
-                          {member.role}
-                        </p>
-                      </div>
-
-                      <div className="flex gap-3 text-[#BABABA]">
-                        <a
-                          href={member.socialLinks?.twitter}
-                          aria-label={`${member.name}'s Twitter`}
-                          className="font-bold text-lg hover:text-[#173DED] transition-colors focus:outline-none focus:text-[#173DED]"
-                        >
-                          𝕏
-                        </a>
-                        <a
-                          href={member.socialLinks?.linkedin}
-                          aria-label={`${member.name}'s LinkedIn`}
-                          className="font-bold text-lg hover:text-[#173DED] transition-colors focus:outline-none focus:text-[#173DED]"
-                        >
-                          in
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-[#BABABA] leading-relaxed mt-auto pb-1 line-clamp-4">
+                  <img
+                    src={member.imageUrl}
+                    alt={`${member.name} — ${member.role}`}
+                    className="h-full w-full object-cover"
+                  />
+                  <div
+                    className={`absolute inset-x-0 bottom-0 bg-card/95 p-5 backdrop-blur-sm transition-opacity ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <h3 className="font-display text-lg font-extrabold">
+                      {member.name}
+                    </h3>
+                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-primary">
+                      {member.role}
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
                       {member.bio}
                     </p>
                   </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="grid gap-5 md:hidden">
+            {teamMembers.map((member) => (
+              <article
+                key={member.id}
+                className="overflow-hidden rounded-3xl border border-border bg-background"
+              >
+                <img
+                  src={member.imageUrl}
+                  alt={`${member.name} — ${member.role}`}
+                  className="h-64 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-extrabold">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-primary">
+                    {member.role}
+                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {member.bio}
+                  </p>
                 </div>
               </article>
-            );
-          })}
-        </div>
-
-        {/* Right Side: Stacked Cards (Mobile) */}
-        <div className="flex md:hidden flex-col gap-8 w-full mt-4">
-          {teamMembers.map((member) => (
-            <article
-              key={member.id}
-              className="rounded-[32px] overflow-hidden shadow-2xl flex flex-col border border-white/10 bg-[#000051]"
-            >
-              <img
-                src={member.imageUrl}
-                alt={`${member.name} - ${member.role}`}
-                className="w-full h-[300px] object-cover"
-              />
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#DCDEE2] leading-tight">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-semibold text-[#173DED] mt-1 tracking-wide uppercase">
-                      {member.role}
-                    </p>
-                  </div>
-                  <div className="flex gap-4 text-[#BABABA]">
-                    <a
-                      href={member.socialLinks?.twitter}
-                      aria-label={`${member.name}'s Twitter`}
-                      className="font-bold text-xl hover:text-[#173DED] transition-colors"
-                    >
-                      𝕏
-                    </a>
-                    <a
-                      href={member.socialLinks?.linkedin}
-                      aria-label={`${member.name}'s LinkedIn`}
-                      className="font-bold text-xl hover:text-[#173DED] transition-colors"
-                    >
-                      in
-                    </a>
-                  </div>
-                </div>
-                <p className="text-base text-[#BABABA] leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

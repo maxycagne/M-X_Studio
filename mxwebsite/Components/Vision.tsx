@@ -1,19 +1,21 @@
-import React from "react";
-
 const Vision = () => {
   return (
-    <section className="relative group">
-      <div className="absolute -right-10 top-0 w-32 h-32 bg-[#000051] rounded-full blur-[50px] pointer-events-none" />
-
-      <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">
-        OUR <span className="text-[#173DED]">VISION</span>
-      </h2>
-      <p className="text-[#DCDEE2] text-lg md:text-xl max-w-3xl leading-relaxed font-light tracking-wide">
-        To set a new standard in the digital landscape by crafting premium,
-        scalable, and minimalist applications. We envision a future where
-        technology feels effortless, empowering brands to connect with their
-        audiences through seamless, high-performance design.
-      </p>
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-4xl">
+          <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+            Direction
+          </p>
+          <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] md:text-5xl">
+            Our <span className="text-primary">vision</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground md:text-2xl">
+            To set a higher standard for digital products by crafting premium,
+            scalable, and precise applications — where technology feels
+            effortless and brands connect through high-performance experiences.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

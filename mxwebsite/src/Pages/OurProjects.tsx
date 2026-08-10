@@ -1,21 +1,45 @@
-import React from "react";
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
+import PageMeta from "../../Components/ui/PageMeta";
+import ProjectsIllustration from "../../Components/illustrations/ProjectsIllustration";
 import ProjectComponent from "../../Components/ProjectComponent";
-const OurProject = () => {
+import DemoCallCard from "../../Components/DemoCallCard";
+import TechChip from "../../Components/ui/TechChip";
+
+const OurProjects = () => {
   return (
-    <div className="relative min-h-screen w-full bg-[#000029] font-sans overflow-x-hidden text-white">
-      <Header />
+    <>
+      <PageMeta
+        title="Projects — M&X Studio"
+        description="Selected software projects spanning mobile products, commerce platforms, and enterprise systems."
+      />
 
-      <main className="pt-[140px] lg:pt-[170px] pb-20">
-        <div className="max-w-6xl mx-auto px-6 space-y-40">
-          <ProjectComponent />
+      <section className="pb-20 pt-20 md:pt-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 lg:grid-cols-2">
+          <div className="max-w-4xl">
+            <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+              Projects
+            </p>
+            <h1 className="font-display text-5xl font-extrabold leading-[0.98] tracking-[-0.03em] md:text-7xl">
+              Work defined by problem, solution, and{" "}
+              <span className="text-primary">result</span>
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground md:text-2xl">
+              A portfolio of systems where architecture, interface, and outcome
+              stay tightly connected.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <TechChip>mobile</TechChip>
+              <TechChip>web</TechChip>
+              <TechChip>enterprise</TechChip>
+            </div>
+          </div>
+          <ProjectsIllustration />
         </div>
-      </main>
+      </section>
 
-      <Footer />
-    </div>
+      <ProjectComponent />
+      <DemoCallCard />
+    </>
   );
 };
 
-export default OurProject;
+export default OurProjects;
