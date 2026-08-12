@@ -1,37 +1,27 @@
 import CtaButton from "./ui/CtaButton";
 import SectionHeading from "./ui/SectionHeading";
 import TechChip from "./ui/TechChip";
+import oranjeLogo from "../src/assets/partners/logo.jpg";
+import logoOne from "../src/assets/partners/logo1.png";
+import moncadaLogo from "../src/assets/partners/moncadalogo.jpg";
+import priLogo from "../src/assets/partners/pri-removebg-.png";
+import primeAgentLogo from "../src/assets/partners/prime_agent-removebg-preview.png";
 
-/**
- * Drop partner logo files into `src/assets/partners/` and wire them here.
- * Until then, wordmark placeholders keep the layout intentional.
- */
 const partners = [
-  { name: "Northline", mark: "NL" },
-  { name: "Cascade Ops", mark: "CO" },
-  { name: "Vertex Labs", mark: "VL" },
-  { name: "Harbor Systems", mark: "HS" },
-  { name: "Pulsefield", mark: "PF" },
-  { name: "Aperture Co", mark: "AC" },
+  { name: "Oranje Cafe", src: oranjeLogo },
+  { name: "Coins Drop", src: logoOne },
+  { name: "Bayan ng Moncada", src: moncadaLogo },
+  { name: "PRI", src: priLogo },
+  { name: "Prime Agent", src: primeAgentLogo },
 ] as const;
 
-const PartnerMark = ({
-  name,
-  mark,
-}: {
-  name: string;
-  mark: string;
-}) => (
-  <div className="flex shrink-0 items-center gap-3 px-8 sm:px-10">
-    <span
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card font-mono text-[10px] font-bold text-primary"
-      aria-hidden="true"
-    >
-      {mark}
-    </span>
-    <span className="whitespace-nowrap font-display text-sm font-extrabold tracking-tight text-foreground sm:text-base">
-      {name}
-    </span>
+const PartnerMark = ({ name, src }: { name: string; src: string }) => (
+  <div className="flex shrink-0 items-center justify-center px-6 sm:px-10">
+    <img
+      src={src}
+      alt={name}
+      className="h-14 w-auto max-w-[7.5rem] object-contain opacity-60 grayscale transition-[filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0 sm:h-16 sm:max-w-[9rem]"
+    />
   </div>
 );
 
@@ -42,20 +32,20 @@ const Partners = () => {
     <>
       <section
         className="overflow-hidden border-y border-border bg-secondary/70"
-        aria-label="Partner logos"
+        aria-label="Our partners and clients"
       >
-        <div className="border-b border-border bg-card px-4 py-2.5">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-            <p className="font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
-              Partners
-            </p>
-            <p className="hidden font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground sm:block">
-              Trusted delivery network
+        <div className="border-b border-border bg-card px-4 py-10 md:py-14">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] text-foreground md:text-5xl">
+              Our Partners & <span className="text-primary">Clients</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground md:text-2xl">
+              Trusted by forward-thinking businesses across industries.
             </p>
           </div>
         </div>
 
-        <div className="relative py-6 md:py-8">
+        <div className="relative py-8 md:py-10">
           <div
             className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-secondary to-transparent sm:w-24"
             aria-hidden="true"
@@ -69,8 +59,11 @@ const Partners = () => {
             {[0, 1].map((copy) => (
               <div key={copy} className="flex items-center">
                 {sequence.map((partner, index) => (
-                  <div key={`${copy}-${partner.name}-${index}`} className="flex items-center">
-                    <PartnerMark name={partner.name} mark={partner.mark} />
+                  <div
+                    key={`${copy}-${partner.name}-${index}`}
+                    className="flex items-center"
+                  >
+                    <PartnerMark name={partner.name} src={partner.src} />
                     <span
                       className="h-1.5 w-1.5 shrink-0 rounded-full bg-border"
                       aria-hidden="true"

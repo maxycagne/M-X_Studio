@@ -5,7 +5,6 @@ import Services from "../../Components/Services";
 import Process from "../../Components/Process";
 import Projects from "../../Components/Projects";
 import Metrics from "../../Components/Metrics";
-import Partners from "../../Components/Partners";
 import DemoCallCard from "../../Components/DemoCallCard";
 
 const Home = () => {
@@ -43,8 +42,8 @@ const Home = () => {
         </div>
       </section>
 
-      <Partners />
       <Services />
+
       <Projects />
       <Metrics />
       <Process />
