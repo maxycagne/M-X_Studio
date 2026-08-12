@@ -1,8 +1,8 @@
 import PageMeta from "../../Components/ui/PageMeta";
 import ProjectsIllustration from "../../Components/illustrations/ProjectsIllustration";
-import ProjectComponent from "../../Components/ProjectComponent";
 import DemoCallCard from "../../Components/DemoCallCard";
 import TechChip from "../../Components/ui/TechChip";
+import CtaButton from "../../Components/ui/CtaButton";
 
 const OurProjects = () => {
   return (
@@ -36,7 +36,31 @@ const OurProjects = () => {
         </div>
       </section>
 
-      <ProjectComponent />
+      <section className="pb-24 md:pb-32">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="rounded-3xl border border-border bg-card p-10 text-center shadow-soft md:p-16">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+              status: in progress
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.02em] md:text-5xl">
+              Coming <span className="text-primary">soon</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
+              We’re preparing a curated set of case studies. Check back shortly
+              — or start a conversation about your next build.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <TechChip>portfolio</TechChip>
+              <TechChip>case studies</TechChip>
+              <TechChip>shipping soon</TechChip>
+            </div>
+            <div className="mt-10">
+              <CtaButton to="/contact">Start a project</CtaButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <DemoCallCard />
     </>
   );
