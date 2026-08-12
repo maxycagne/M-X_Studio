@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { to: "/projects", label: "Projects" },
   { to: "/blogs", label: "Blogs" },
   { to: "/careers", label: "Careers" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 const Header = () => {
