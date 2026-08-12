@@ -5,36 +5,6 @@ import TechChip from "../../Components/ui/TechChip";
 import CtaButton from "../../Components/ui/CtaButton";
 import DemoCallCard from "../../Components/DemoCallCard";
 
-const roles = [
-  {
-    title: "Frontend Engineer",
-    type: "Full-time · Remote",
-    stack: ["React", "TypeScript", "Tailwind"],
-    responsibilities: [
-      "Build precise product interfaces with strong accessibility.",
-      "Own component systems and interaction quality.",
-    ],
-  },
-  {
-    title: "Backend Engineer",
-    type: "Full-time · Remote",
-    stack: ["Node.js", "SQL", "APIs"],
-    responsibilities: [
-      "Design durable service boundaries and data models.",
-      "Improve reliability, observability, and auth flows.",
-    ],
-  },
-  {
-    title: "Product Designer (Engineering-minded)",
-    type: "Contract · Remote",
-    stack: ["Systems", "Prototyping", "A11y"],
-    responsibilities: [
-      "Shape interface architecture with engineering constraints in mind.",
-      "Deliver production-ready visual and interaction specs.",
-    ],
-  },
-];
-
 const benefits = [
   "High-ownership engineering culture",
   "Direct collaboration with founders",
@@ -78,48 +48,24 @@ const CareersPage = () => {
 
       <section className="pb-24 md:pb-32">
         <div className="mx-auto max-w-6xl px-4">
-          <SectionHeading
-            eyebrow="Open roles"
-            title={
-              <>
-                Positions currently in the{" "}
-                <span className="text-primary">pipeline</span>
-              </>
-            }
-          />
-
-          <div className="mt-12 grid gap-5">
-            {roles.map((role, index) => (
-              <article
-                key={role.title}
-                className="animate-rise-in rounded-3xl border border-border bg-card p-6 md:p-8"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
-                  <div>
-                    <h2 className="font-display text-2xl font-extrabold">
-                      {role.title}
-                    </h2>
-                    <p className="mt-2 font-mono text-xs text-muted-foreground">
-                      {role.type}
-                    </p>
-                  </div>
-                  <CtaButton to="/contact" variant="secondary" showArrow={false}>
-                    Apply
-                  </CtaButton>
-                </div>
-                <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-                  {role.responsibilities.map((item) => (
-                    <li key={item}>— {item}</li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {role.stack.map((item) => (
-                    <TechChip key={item}>{item}</TechChip>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <div className="rounded-3xl border border-border bg-card p-10 text-center shadow-soft md:p-16">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+              status: no open roles
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.02em] md:text-5xl">
+              Coming <span className="text-primary">soon</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
+              We don’t have open roles right now. Reach out anyway if you’d like
+              to be considered for future openings.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <TechChip>hiring: paused</TechChip>
+              <TechChip>talent pipeline</TechChip>
+            </div>
+            <div className="mt-10">
+              <CtaButton to="/contact">Get in touch</CtaButton>
+            </div>
           </div>
         </div>
       </section>

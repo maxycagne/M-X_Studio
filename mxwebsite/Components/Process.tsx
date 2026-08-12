@@ -1,4 +1,11 @@
-import { Search, Map, Hammer, ShieldCheck, Rocket } from "lucide-react";
+import {
+  Hammer,
+  Brain,
+  Network,
+  Target,
+  Route,
+  Handshake,
+} from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 import CtaButton from "./ui/CtaButton";
 
@@ -8,38 +15,48 @@ const accents = [
   "text-mint",
   "text-signal",
   "text-primary",
+  "text-violet",
 ] as const;
 
-const steps = [
+const hairlines = [
+  "bg-primary",
+  "bg-violet",
+  "bg-mint",
+  "bg-signal",
+  "bg-primary",
+  "bg-violet",
+] as const;
+
+const principles = [
   {
-    title: "Discover",
-    description:
-      "Understand the problem, constraints, and business goals before writing a line of production code.",
-    icon: Search,
-  },
-  {
-    title: "Strategize",
-    description:
-      "Define architecture, delivery milestones, and the technical decisions that keep the path clear.",
-    icon: Map,
-  },
-  {
-    title: "Build",
-    description:
-      "Implement in focused increments with strong interfaces, tests where they matter, and clean ownership.",
+    title: "Custom-Built From Scratch",
+    description: "No off-the-shelf systems",
     icon: Hammer,
   },
   {
-    title: "Validate",
-    description:
-      "Pressure-test reliability, accessibility, and performance before the release window opens.",
-    icon: ShieldCheck,
+    title: "Business-First Thinking",
+    description: "We design logic before code",
+    icon: Brain,
   },
   {
-    title: "Launch",
-    description:
-      "Ship with observability, rollback plans, and a calm handoff into ongoing iteration.",
-    icon: Rocket,
+    title: "Scalable Architecture",
+    description: "Built to grow with you",
+    icon: Network,
+  },
+  {
+    title: "Results-Focused Execution",
+    description: "Solve real operational problems",
+    icon: Target,
+  },
+  {
+    title: "End-to-End Ownership",
+    description: "From idea to deployment",
+    icon: Route,
+  },
+  {
+    title: "Long-Term Partner Mindset",
+    description: "Not a one-off dev shop",
+    icon: Handshake,
   },
 ];
 
@@ -48,26 +65,26 @@ const Process = () => {
     <section className="border-y border-border bg-card py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Process"
+          eyebrow="Development process"
           title={
             <>
-              A delivery rhythm built for{" "}
-              <span className="text-primary">clarity</span>
+              Build better <span className="text-primary">together</span>
             </>
           }
-          lead="Listen deeply, design smart, build with discipline, and ship with confidence."
+          lead="A partnership approach — custom systems, clear logic, and ownership from idea through deployment."
         />
 
-        <ol className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+        <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {principles.map((item, index) => {
+            const Icon = item.icon;
             return (
               <li
-                key={step.title}
+                key={item.title}
                 className="animate-rise-in rounded-3xl border border-border bg-background p-6 transition-transform hover:-translate-y-1 hover:shadow-soft"
                 style={{ animationDelay: `${index * 70}ms` }}
               >
-                <div className="mb-8 flex items-center justify-between">
+                <div className={`mb-5 h-px w-12 ${hairlines[index]}`} />
+                <div className="mb-6 flex items-center justify-between">
                   <Icon
                     className={`h-5 w-5 ${accents[index]}`}
                     aria-hidden="true"
@@ -77,18 +94,18 @@ const Process = () => {
                   </span>
                 </div>
                 <h3 className="font-display text-lg font-extrabold">
-                  {step.title}
+                  {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {step.description}
+                  {item.description}
                 </p>
               </li>
             );
           })}
-        </ol>
+        </ul>
 
         <div className="mt-12">
-          <CtaButton to="/contact">Get started</CtaButton>
+          <CtaButton to="/contact">Free strategy call</CtaButton>
         </div>
       </div>
     </section>
