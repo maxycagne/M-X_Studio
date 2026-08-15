@@ -2,13 +2,7 @@ import IllustrationFrame from "./IllustrationFrame";
 
 const ServicesIllustration = () => {
   return (
-    <IllustrationFrame
-      chips={[
-        { label: "API / REST", className: "-left-2 top-10", delay: "0s" },
-        { label: "status: online", className: "right-0 top-20", delay: "0.5s" },
-        { label: "v2.4.1", className: "bottom-8 -left-1", delay: "1s" },
-      ]}
-    >
+    <IllustrationFrame>
       <svg
         viewBox="0 0 560 340"
         className="h-auto w-full text-foreground"

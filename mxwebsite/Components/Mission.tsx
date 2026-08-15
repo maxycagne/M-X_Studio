@@ -1,7 +1,7 @@
 const Mission = () => {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
+    <section className="section-band relative py-20 md:py-28">
+      <div className="relative mx-auto max-w-6xl px-4">
         <div className="max-w-4xl">
           <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
             Studio

@@ -1,6 +1,5 @@
 import CtaButton from "./ui/CtaButton";
 import SectionHeading from "./ui/SectionHeading";
-import TechChip from "./ui/TechChip";
 import oranjeLogo from "../src/assets/partners/logo.jpg";
 import logoOne from "../src/assets/partners/logo1.png";
 import moncadaLogo from "../src/assets/partners/moncadalogo.jpg";
@@ -16,11 +15,11 @@ const partners = [
 ] as const;
 
 const PartnerMark = ({ name, src }: { name: string; src: string }) => (
-  <div className="flex shrink-0 items-center justify-center px-6 sm:px-10">
+  <div className="flex shrink-0 items-center justify-center px-5 sm:px-10">
     <img
       src={src}
       alt={name}
-      className="h-14 w-auto max-w-[7.5rem] object-contain opacity-60 grayscale transition-[filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0 sm:h-16 sm:max-w-[9rem]"
+      className="h-12 w-auto max-w-[6.5rem] object-contain opacity-60 grayscale transition-[filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0 sm:h-16 sm:max-w-[9rem]"
     />
   </div>
 );
@@ -34,12 +33,15 @@ const Partners = () => {
         className="overflow-hidden border-y border-border bg-secondary/70"
         aria-label="Our partners and clients"
       >
-        <div className="border-b border-border bg-card px-4 py-10 md:py-14">
+        <div className="border-b border-border bg-card/80 px-4 py-10 md:py-14">
           <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-3 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+              Trust
+            </p>
             <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] text-foreground md:text-5xl">
-              Our Partners & <span className="text-primary">Clients</span>
+              Partners & <span className="text-primary">clients</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground md:text-2xl">
+            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-xl">
               Trusted by forward-thinking businesses across industries.
             </p>
           </div>
@@ -47,11 +49,11 @@ const Partners = () => {
 
         <div className="relative py-8 md:py-10">
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-secondary to-transparent sm:w-24"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-secondary to-transparent sm:w-24"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-secondary to-transparent sm:w-24"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-secondary to-transparent sm:w-24"
             aria-hidden="true"
           />
 
@@ -76,9 +78,9 @@ const Partners = () => {
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-8 shadow-soft md:p-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid items-center gap-8 border-y border-border py-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:py-14">
             <div>
               <SectionHeading
                 eyebrow="Partnerships"
@@ -90,15 +92,9 @@ const Partners = () => {
                 }
                 lead="Looking to collaborate, co-build, or refer work? We’re open to agency partnerships, product alliances, and long-term delivery relationships."
               />
-              <div className="mt-8 flex flex-wrap gap-2">
-                <TechChip>co-build</TechChip>
-                <TechChip>referrals</TechChip>
-                <TechChip>white-label</TechChip>
-                <TechChip>long-term</TechChip>
-              </div>
             </div>
 
-            <div className="rounded-3xl border border-border bg-background p-6 md:p-8">
+            <div>
               <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
                 next step
               </p>

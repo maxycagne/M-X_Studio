@@ -1,7 +1,8 @@
 const Vision = () => {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
+    <section className="atmosphere relative overflow-hidden py-20 md:py-28">
+      <div className="pointer-events-none absolute inset-0 grid-canvas opacity-30" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4">
         <div className="max-w-4xl">
           <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
             Direction

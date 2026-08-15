@@ -54,9 +54,9 @@ const OurTeam = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="border-y border-border bg-card py-24 md:py-32">
+    <section className="border-y border-border bg-card py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <SectionHeading
             eyebrow="Team"
             title={
@@ -76,7 +76,7 @@ const OurTeam = () => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   tabIndex={0}
-                  className={`relative overflow-hidden rounded-3xl border border-border bg-background transition-all duration-500 focus-visible:outline-none ${
+                  className={`relative overflow-hidden border border-border bg-background transition-all duration-500 focus-visible:outline-none ${
                     isActive ? "flex-[2.2]" : "flex-1"
                   }`}
                 >
@@ -105,18 +105,18 @@ const OurTeam = () => {
             })}
           </div>
 
-          <div className="grid gap-5 md:hidden">
+          <div className="grid gap-0 border-t border-border md:hidden">
             {teamMembers.map((member) => (
               <article
                 key={member.id}
-                className="overflow-hidden rounded-3xl border border-border bg-background"
+                className="grid gap-4 border-b border-border py-6 sm:grid-cols-[8rem_1fr] sm:items-center"
               >
                 <img
                   src={member.imageUrl}
                   alt={`${member.name} — ${member.role}`}
-                  className="h-64 w-full object-cover"
+                  className="h-40 w-full object-cover sm:h-28 sm:w-32"
                 />
-                <div className="p-6">
+                <div>
                   <h3 className="font-display text-xl font-extrabold">
                     {member.name}
                   </h3>

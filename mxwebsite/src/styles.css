@@ -22,6 +22,21 @@
     var(--primary),
     color-mix(in oklab, var(--primary) 70%, var(--primary-deep))
   );
+  --gradient-atmosphere: radial-gradient(
+      120% 80% at 12% -10%,
+      color-mix(in oklab, var(--primary) 12%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 70% at 92% 8%,
+      color-mix(in oklab, var(--mint) 10%, transparent),
+      transparent 50%
+    ),
+    radial-gradient(
+      80% 60% at 50% 100%,
+      color-mix(in oklab, var(--violet) 8%, transparent),
+      transparent 55%
+    );
   --shadow-cta: 0 12px 28px color-mix(in oklab, var(--primary) 28%, transparent);
   --shadow-soft: 0 16px 40px color-mix(in oklab, var(--foreground) 8%, transparent);
 }
@@ -190,8 +205,39 @@
     background-size: 18px 18px;
   }
 
+  .atmosphere {
+    background-color: var(--background);
+    background-image: var(--gradient-atmosphere);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    font-size: clamp(2.25rem, 8vw, 4.5rem);
+  }
+
+  .section-band {
+    position: relative;
+  }
+
+  .section-band::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-image: var(--gradient-atmosphere);
+    opacity: 0.55;
+  }
+
   .marquee-band {
     background-image: var(--gradient-marquee);
+  }
+
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 

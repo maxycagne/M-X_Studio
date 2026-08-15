@@ -30,7 +30,7 @@ const features = [
 
 const Different = () => {
   return (
-    <section className="border-y border-border bg-card py-24 md:py-32">
+    <section className="border-y border-border bg-secondary/40 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Differentiators"
@@ -42,13 +42,13 @@ const Different = () => {
           lead="We don’t chase generic industry patterns — we set a higher bar for clarity, craft, and delivery."
         />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-0 border-t border-border md:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <article
                 key={feature.title}
-                className="animate-rise-in rounded-3xl border border-border bg-background p-6 transition-transform hover:-translate-y-1 hover:shadow-soft md:p-8"
+                className="animate-rise-in border-b border-border py-8 md:border-b-0 md:border-r md:px-6 md:py-10 md:last:border-r-0 md:first:pl-0"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className={`mb-5 h-px w-12 ${feature.hairline}`} />

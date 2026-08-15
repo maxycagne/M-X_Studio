@@ -7,7 +7,6 @@ import {
   PenTool,
 } from "lucide-react";
 import CtaButton from "./ui/CtaButton";
-import TechChip from "./ui/TechChip";
 
 const accents = [
   "text-primary",
@@ -73,9 +72,9 @@ interface ServicesProps {
 
 const Services = ({ showCta = true }: ServicesProps) => {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div
             className="pointer-events-none absolute -left-8 top-10 h-44 w-44 rounded-full blur-3xl"
             style={{
@@ -113,23 +112,17 @@ const Services = ({ showCta = true }: ServicesProps) => {
                       M&X Studio — Capabilities.app
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TechChip className="!px-2 !py-0.5">macOS</TechChip>
-                    <span className="font-mono text-[10px] text-muted-foreground">
-                      09:41
-                    </span>
-                  </div>
+                  <span className="font-mono text-[10px] text-muted-foreground">
+                    09:41
+                  </span>
                 </div>
 
                 <div className="grid-canvas bg-background/50 p-4 sm:p-5 md:p-6">
                   <div className="mb-5 flex flex-col gap-4 border-b border-border pb-5 sm:flex-row sm:items-end sm:justify-between">
                     <div className="max-w-2xl">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <p className="font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
-                          Capabilities
-                        </p>
-                        <TechChip>modules: 6</TechChip>
-                      </div>
+                      <p className="font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
+                        Capabilities
+                      </p>
                       <h2 className="mt-3 font-display text-2xl font-extrabold tracking-[-0.02em] md:text-4xl">
                         Engineering capabilities built as a{" "}
                         <span className="text-primary">system</span>
@@ -154,7 +147,7 @@ const Services = ({ showCta = true }: ServicesProps) => {
                       return (
                         <article
                           key={service.title}
-                          className="animate-rise-in rounded-2xl border border-border bg-card p-4 transition-transform hover:-translate-y-1 hover:shadow-soft"
+                          className="animate-rise-in border border-border/80 bg-card/90 p-4 transition-colors hover:border-primary/30 hover:bg-card"
                           style={{ animationDelay: `${index * 70}ms` }}
                         >
                           <div className="mb-3 flex items-start justify-between gap-3">
@@ -192,13 +185,13 @@ const Services = ({ showCta = true }: ServicesProps) => {
               aria-hidden="true"
             />
 
-            <div className="relative mx-auto w-[108%] -translate-x-[3.7%] rounded-b-[1.25rem] border border-border border-t-0 bg-secondary px-6 pb-3 pt-2 shadow-soft sm:rounded-b-[1.5rem]">
+            <div className="relative mx-auto w-full max-w-full rounded-b-[1.25rem] border border-border border-t-0 bg-secondary px-4 pb-3 pt-2 shadow-soft sm:rounded-b-[1.5rem] sm:px-6">
               <div
-                className="mx-auto h-1 w-24 rounded-full bg-border sm:w-32"
+                className="mx-auto h-1 w-20 rounded-full bg-border sm:w-32"
                 aria-hidden="true"
               />
               <div
-                className="mx-auto mt-3 h-8 w-[42%] rounded-xl border border-border bg-card/80 sm:h-10"
+                className="mx-auto mt-3 h-7 w-[min(42%,12rem)] rounded-xl border border-border bg-card/80 sm:h-10"
                 aria-hidden="true"
               />
             </div>

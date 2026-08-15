@@ -62,7 +62,7 @@ const principles = [
 
 const Process = () => {
   return (
-    <section className="border-y border-border bg-card py-24 md:py-32">
+    <section className="border-y border-border bg-secondary/50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Development process"
@@ -74,17 +74,17 @@ const Process = () => {
           lead="A partnership approach — custom systems, clear logic, and ownership from idea through deployment."
         />
 
-        <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="mt-12 grid gap-8 border-t border-border pt-10 sm:grid-cols-2 xl:grid-cols-3">
           {principles.map((item, index) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.title}
-                className="animate-rise-in rounded-3xl border border-border bg-background p-6 transition-transform hover:-translate-y-1 hover:shadow-soft"
+                className="animate-rise-in"
                 style={{ animationDelay: `${index * 70}ms` }}
               >
-                <div className={`mb-5 h-px w-12 ${hairlines[index]}`} />
-                <div className="mb-6 flex items-center justify-between">
+                <div className={`mb-4 h-px w-10 ${hairlines[index]}`} />
+                <div className="mb-4 flex items-center justify-between">
                   <Icon
                     className={`h-5 w-5 ${accents[index]}`}
                     aria-hidden="true"
@@ -96,7 +96,7 @@ const Process = () => {
                 <h3 className="font-display text-lg font-extrabold">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </li>
@@ -104,7 +104,7 @@ const Process = () => {
           })}
         </ul>
 
-        <div className="mt-12">
+        <div className="mt-10 md:mt-12">
           <CtaButton to="/contact">Free strategy call</CtaButton>
         </div>
       </div>

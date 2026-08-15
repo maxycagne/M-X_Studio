@@ -1,57 +1,29 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowUpRight, GitBranch } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 import TechChip from "./ui/TechChip";
 import CtaButton from "./ui/CtaButton";
-
-const projects = [
-  {
-    id: 1,
-    title: "Listah Smart Home",
-    category: "Mobile Application",
-    problem: "Household coordination was fragmented across chats and notes.",
-    solution:
-      "A focused productivity app for chores, meals, and shared routines with a calm, minimal interface.",
-    outcome: "Faster planning loops and clearer household ownership.",
-    techStack: ["React Native", "Tailwind CSS", "Firebase"],
-  },
-  {
-    id: 2,
-    title: "Coinsdrop Apparel",
-    category: "E-Commerce Platform",
-    problem: "The brand needed a storefront that converted without visual noise.",
-    solution:
-      "A high-conversion commerce system with clean catalog flows and disciplined brand alignment.",
-    outcome: "Smoother checkout paths and stronger merchandising clarity.",
-    techStack: ["React", "Tailwind", "Node.js"],
-  },
-  {
-    id: 3,
-    title: "WAH Enterprise System",
-    category: "Secure Architecture",
-    problem: "Operations depended on fragile, disconnected internal tools.",
-    solution:
-      "A secure backend platform for payroll, evaluations, and authenticated live-server workflows.",
-    outcome: "Centralized operations with stronger access control.",
-    techStack: ["PHP", "Laravel", "MySQL"],
-  },
-];
+import { featuredProjects } from "../src/data/projects";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const project = projects[currentIndex];
+  const project = featuredProjects[currentIndex];
 
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === featuredProjects.length - 1 ? 0 : prev + 1,
+    );
   };
 
   const prevSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? featuredProjects.length - 1 : prev - 1,
+    );
   };
 
   useEffect(() => {
@@ -59,9 +31,11 @@ const Projects = () => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
+  if (!project) return null;
+
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
+    <section className="section-band relative py-20 md:py-28">
+      <div className="relative mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Selected work"
           title={
@@ -73,20 +47,24 @@ const Projects = () => {
           lead="From product interfaces to enterprise systems — each engagement is treated like production infrastructure."
         />
 
-        <div className="relative mt-14">
-          <div className="rounded-3xl border border-border bg-card p-6 shadow-soft md:p-10">
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-              <TechChip>{project.category}</TechChip>
+        <div className="relative mt-12 md:mt-14">
+          <div
+            className={`border-y border-border bg-card/80 py-8 transition-opacity duration-300 md:py-10 ${
+              isAnimating ? "opacity-60" : "opacity-100"
+            }`}
+          >
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+              <TechChip>{project.categoryLabel}</TechChip>
               <span className="font-mono text-xs text-muted-foreground">
-                0{currentIndex + 1} / 0{projects.length}
+                0{currentIndex + 1} / 0{featuredProjects.length}
               </span>
             </div>
 
-            <h3 className="font-display text-3xl font-extrabold tracking-[-0.02em] md:text-4xl">
+            <h3 className="font-display text-2xl font-extrabold tracking-[-0.02em] sm:text-3xl md:text-4xl">
               {project.title}
             </h3>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
                   Problem
@@ -103,7 +81,7 @@ const Projects = () => {
                   {project.solution}
                 </p>
               </div>
-              <div>
+              <div className="sm:col-span-2 md:col-span-1">
                 <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
                   Outcome
                 </p>
@@ -113,38 +91,20 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <TechChip key={tech}>{tech}</TechChip>
-                ))}
-              </div>
-              <div className="flex gap-5">
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
-                >
-                  View code
-                  <GitBranch className="h-4 w-4" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary"
-                >
-                  Live site
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </div>
+            <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
+              {project.tech.map((tech) => (
+                <TechChip key={tech}>{tech}</TechChip>
+              ))}
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-between gap-4">
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous project"
-                className="rounded-full border border-border bg-card p-3 text-foreground transition-colors hover:text-primary"
+                className="tap-target rounded-full border border-border bg-card p-3 text-foreground transition-colors hover:text-primary"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -152,7 +112,7 @@ const Projects = () => {
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next project"
-                className="rounded-full border border-border bg-card p-3 text-foreground transition-colors hover:text-primary"
+                className="tap-target rounded-full border border-border bg-card p-3 text-foreground transition-colors hover:text-primary"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>

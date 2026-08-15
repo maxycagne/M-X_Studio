@@ -1,9 +1,10 @@
 import PageMeta from "../../Components/ui/PageMeta";
+import PageHero from "../../Components/ui/PageHero";
 import SectionHeading from "../../Components/ui/SectionHeading";
 import ServicesIllustration from "../../Components/illustrations/ServicesIllustration";
 import Services from "../../Components/Services";
 import DemoCallCard from "../../Components/DemoCallCard";
-import TechChip from "../../Components/ui/TechChip";
+import CtaButton from "../../Components/ui/CtaButton";
 
 const serviceNotes = [
   {
@@ -31,35 +32,22 @@ const ServicesPage = () => {
         description="Engineering capabilities across web, mobile, backend, cloud, automation, and UI/UX systems."
       />
 
-      <section className="pb-24 pt-20 md:pb-32 md:pt-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 lg:grid-cols-2">
-          <div className="max-w-4xl">
-            <p className="mb-4 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-primary">
-              Services
-            </p>
-            <h1 className="font-display text-5xl font-extrabold leading-[0.98] tracking-[-0.03em] md:text-7xl">
-              Capabilities designed like an engineering{" "}
-              <span className="text-primary">system</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground md:text-2xl">
-              From product surfaces to infrastructure — each engagement is
-              structured, measurable, and built to last.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              <TechChip>web</TechChip>
-              <TechChip>mobile</TechChip>
-              <TechChip>backend</TechChip>
-              <TechChip>cloud</TechChip>
-            </div>
-          </div>
-          <ServicesIllustration />
-        </div>
-      </section>
+      <PageHero
+        headline={
+          <>
+            Capabilities designed like an engineering{" "}
+            <span className="text-primary">system</span>
+          </>
+        }
+        lead="From product surfaces to infrastructure — each engagement is structured, measurable, and built to last."
+        actions={<CtaButton to="/contact">Discuss a build</CtaButton>}
+        visual={<ServicesIllustration />}
+      />
 
       <Services showCta={false} />
 
-      <section className="pb-24 md:pb-32">
-        <div className="mx-auto max-w-6xl px-4">
+      <section className="section-band relative pb-20 md:pb-28">
+        <div className="relative mx-auto max-w-6xl px-4">
           <SectionHeading
             eyebrow="Delivery posture"
             title={
@@ -69,14 +57,14 @@ const ServicesPage = () => {
               </>
             }
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-8 border-t border-border pt-10 md:mt-12 md:grid-cols-3 md:gap-6">
             {serviceNotes.map((note, index) => (
               <article
                 key={note.title}
-                className="animate-rise-in rounded-3xl border border-border bg-card p-6 transition-transform hover:-translate-y-1 hover:shadow-soft"
+                className="animate-rise-in"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className={`mb-5 h-px w-12 ${note.accent}`} />
+                <div className={`mb-4 h-px w-12 ${note.accent}`} />
                 <h3 className="font-display text-xl font-extrabold">
                   {note.title}
                 </h3>

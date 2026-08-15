@@ -2,13 +2,7 @@ import IllustrationFrame from "./IllustrationFrame";
 
 const BlogsIllustration = () => {
   return (
-    <IllustrationFrame
-      chips={[
-        { label: "editorial", className: "-left-2 top-10", delay: "0s" },
-        { label: "read: 6 min", className: "right-0 top-16", delay: "0.5s" },
-        { label: "tag: systems", className: "bottom-8 left-4", delay: "1s" },
-      ]}
-    >
+    <IllustrationFrame>
       <svg
         viewBox="0 0 560 320"
         className="h-auto w-full text-foreground"

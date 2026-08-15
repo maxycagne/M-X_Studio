@@ -2,13 +2,7 @@ import IllustrationFrame from "./IllustrationFrame";
 
 const ContactIllustration = () => {
   return (
-    <IllustrationFrame
-      chips={[
-        { label: "inbox: open", className: "-left-2 top-12", delay: "0s" },
-        { label: "SLA < 24h", className: "right-0 top-20", delay: "0.4s" },
-        { label: "reply: ready", className: "bottom-8 left-6", delay: "0.9s" },
-      ]}
-    >
+    <IllustrationFrame>
       <svg
         viewBox="0 0 560 320"
         className="h-auto w-full text-foreground"

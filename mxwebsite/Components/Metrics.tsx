@@ -15,7 +15,7 @@ const Metrics = () => {
             className="animate-rise-in"
             style={{ animationDelay: `${index * 80}ms` }}
           >
-            <p className="font-display text-4xl font-extrabold text-foreground">
+            <p className="font-display text-3xl font-extrabold text-foreground sm:text-4xl">
               {metric.value}
             </p>
             <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
